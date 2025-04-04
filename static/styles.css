@@ -1,0 +1,41 @@
+.form-container {
+    margin-bottom: 20px; /* Space between sections */
+}
+
+.form2 textarea {
+    width: 90%;
+    box-sizing: border-box;
+    resize: none;
+    height: calc(15 * 1.2em); /* 1.2em is a rough estimate for line-height */
+    margin-top: 10px; /* Space between the button and textarea */
+}
+
+.submit-button-container button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.form-element {
+    margin-bottom: 20px; /* Space between elements */
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 6px;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+.custom-button{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+}

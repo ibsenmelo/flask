@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Detalhes da Ordem de Serviço: {{id}}</h1>
+    <h3>Título: {{osgeral[4]}}</h3>
+    <h3>Setor demandante: {{osgeral[2]}}</h3>
+    <h3>Autor: {{osgeral[1]}}</h3>
+    <h3>Descrição da demanda: {{osgeral[5]}}</h3>
+    <table>
+        <tr>
+            {% for header in head_detalhes %}
+            <th>{{ header }}</th>
+            {% endfor %}
+        {% for detalhe in detalhes %}
+        <tr>
+            {% for cell in detalhe %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+
+        </tr>
+        {% endfor %}
+    </table>
+    <form action="/detalhe" method="post">
+        <input autocomplete="off" name="nome" placeholder="Nome" type="text">
+        <input autocomplete="off" name="atualiza" placeholder="Atualização" type="text">
+        {% if session["user"] == "dev" %}
+        <label for="entrega">Entrega:</label>
+        <select name="entrega" id="entrega">
+            <option value="não">não</option>
+            <option value="sim">sim</option>
+        </select>
+        <label for="status">Alterar status:</label>
+        <select name="status" id="status">
+            <option value="não">não</option>
+            <option value="Aguardando inicio">Aguardando inicio</option>
+            <option value="Em execução">Em execução</option>
+            <option value="concluido">concluído</option>
+        </select>
+        <label for="date">Prazo:</label>
+        <input  type="date" id="date">
+
+        {% endif %}
+        <button type="submit">Aplicar</button>
+    </form>
+
+    <form action="/greet" method="post">
+        <button type="submit">Página inicial</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+nome,setor_origem,setor_destino,chamado
+fulano,SSER,powerbi,"criar novo workspace"
+ciclano,SUBPOT,powerbi,"criar painel X"
+beltrano,SUBTES,powerbi,"Adicionar botão ao painel Y"
+fulano,SSER,extração de dados,"extrair dados tais"
+ciclano,SUBPOT,extração de dados,"extrair dados para PMPF"

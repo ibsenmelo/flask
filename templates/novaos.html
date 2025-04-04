@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h3>Usuário: {{ session["user"] }}</h3>
+<h1>Criar nova Ordem de Serviço:</h1>
+
+
+<form action="/greet" method="get">
+
+    <label for="nome">Nome:</label>
+
+<select name="name" id="nome">
+  <option value="fulano">fulano</option>
+  <option value="ciclano">ciclano</option>
+  <option value="beltrano">beltrano</option>
+  <option value="foo">foo</option>
+</select>
+
+<label for="setor_ori">Setor de origem:</label>
+
+<select name="setor_ori" id="setor_ori">
+  <option value="SSER">SSER</option>
+  <option value="SUBPOT">SUBPOT</option>
+  <option value="SUBTES">SUBTES</option>
+  <option value="SUBTIC">SUBTIC</option>
+  <option value="OUTROS">OUTROS</option>
+</select>
+
+<label for="setor_dest">Setor de destino:</label>
+
+<select name="setor_dest" id="setor_dest">
+  <option value="PowerBI">PowerBI</option>
+  <option value="Extração de dados">Extração de dados</option>
+</select>
+    <!-- First Section -->
+    <div class="form-container">
+        <label for="name">Título:</label>
+        <input type="text" id="name" name="titulo" required>
+    </div>
+
+    <!-- Second Section -->
+    <div class="form-container form2">
+        <label for="textarea">Descrição:</label>
+        <textarea id="textarea" name="descricao" rows="15" placeholder="Descreva aqui sua demanda..."></textarea>
+    </div>
+
+    <!-- Submit Button -->
+     
+    <div class="submit-button-container form-element">
+        <button type="submit">Aplicar</button>
+    </div>
+    
+</form>
+
+{% endblock %}

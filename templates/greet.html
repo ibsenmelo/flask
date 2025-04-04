@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h1>Olá, {{ name }}</h1>
+
+<button type="button" class="custom-button" onclick="window.location.href='/novaos'">Criar Ordem de Serviço</button>
+<h5>Lista de ordens de serviço</h5>
+<table><tr>
+    {% for header in heading %}
+    <th>{{ header }}</th>
+    {% endfor %}
+
+</tr>
+{% for row in datas %}
+<tr id="row{{ row[0] }}" data-href="/detalhe">
+    {% for cell in row %}
+    <td>{{ cell }}</td>
+    {% endfor %}
+
+</tr>
+{% endfor %}
+
+</table>
+<h5>Clique na ordem de serviço para visualizar detalhamento.</h5>
+<h3> </h3>
+
+<form action="/greet" method="post">
+    <label for="nome">Deletar todas as tabelas:</label>
+
+<select name="delete" id="delete">
+  <option value="não">não</option>
+  <option value="sim">sim</option>
+</select>
+<button type="submit">Deletar</button>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const rows = document.querySelectorAll('tr[data-href]');
+        rows.forEach(row => {
+            row.addEventListener('click', function() {
+                const id = this.id.replace('row', '');
+                window.location.href = `${this.dataset.href}?id=${id}`;
+            });
+        });
+    });
+</script>
+
+{% endblock %}
